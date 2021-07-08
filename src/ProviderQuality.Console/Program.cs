@@ -23,7 +23,8 @@ namespace ProviderQuality.Console
                     new Award {Name = "ACME Partner Facility", SellIn = 5, Quality = 7},
                     new Award {Name = "Blue Distinction Plus", SellIn = 0, Quality = 80},
                     new Award {Name = "Blue Compare", SellIn = 15, Quality = 20},
-                    new Award {Name = "Top Connected Providres", SellIn = 3, Quality = 6}
+                    new Award {Name = "Top Connected Providres", SellIn = 3, Quality = 6},
+                    new Award {Name = "Blue Star", SellIn = 10, Quality = 90}
                 }
 
             };
@@ -105,6 +106,18 @@ namespace ProviderQuality.Console
                         {
                             Awards[i].Quality = Awards[i].Quality + 1;
                         }
+                    }
+                }
+
+                if (Awards[i].Name == "Blue Star")
+                {
+                    if (Awards[i].SellIn < 0)
+                    {
+                        Awards[i].Quality = Awards[i].Quality - 4;
+                    }
+                    else
+                    {
+                        Awards[i].Quality = Awards[i].Quality - 2;
                     }
                 }
             }
